@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="أنشئ رمز QR لرابط موقعك مجانًا، ثم نزّله بصيغة PNG.">
+  <meta name="theme-color" content="#123b5d">
+  <title>مولّد QR Code مجاني | أنشئ باركود لرابطك</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="الرئيسية">
+      <span class="brand-icon" aria-hidden="true">▦</span>
+      <span>رمزي <small>مولّد QR مجاني</small></span>
+    </a>
+    <a class="header-link" href="#how-it-works">كيف يعمل؟</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="live-dot"></span> مجاني • سريع • داخل متصفحك</div>
+      <h1>حوّل رابطك إلى <span>QR Code</span></h1>
+      <p class="hero-copy">أنشئ رمز QR لرابط موقعك خلال ثوانٍ، ثم نزّله كصورة PNG واستخدمه في بطاقاتك وملصقاتك ومطبوعاتك.</p>
+
+      <section class="generator-card" aria-labelledby="generator-title">
+        <div class="card-heading">
+          <div>
+            <h2 id="generator-title">أنشئ رمز QR الخاص بك</h2>
+            <p>أدخل رابطًا كاملًا يبدأ بـ https:// أو http://</p>
+          </div>
+          <div class="qr-symbol" aria-hidden="true">▦</div>
+        </div>
+
+        <form id="qr-form" novalidate>
+          <label for="url-input">رابط الموقع</label>
+          <div class="input-wrap">
+            <span class="link-icon" aria-hidden="true">↗</span>
+            <input id="url-input" name="url" type="url" inputmode="url"
+              placeholder="https://example.com" value="https://example.com"
+              autocomplete="url" spellcheck="false" required>
+          </div>
+          <p id="error-message" class="error-message" role="alert" hidden></p>
+          <button id="generate-button" class="primary-button" type="submit">
+            <span aria-hidden="true">▦</span> إنشاء رمز QR
+          </button>
+        </form>
+
+        <div id="result" class="result" hidden aria-live="polite">
+          <div class="result-title">
+            <h3>رمزك جاهز</h3>
+            <span class="success-label">تم الإنشاء</span>
+          </div>
+          <div class="qr-frame">
+            <div id="qrcode" aria-label="رمز QR الناتج"></div>
+          </div>
+          <p id="result-url" class="result-url"></p>
+          <button id="download-button" class="download-button" type="button">
+            <span aria-hidden="true">↓</span> تنزيل صورة PNG
+          </button>
+          <p class="small-note">افحص الرمز بكاميرا هاتفك قبل طباعته.</p>
+        </div>
+        <p class="privacy-note"><span aria-hidden="true">🔒</span> يتم إنشاء الرمز داخل متصفحك، ولا نرسل الرابط إلى خادمنا.</p>
+      </section>
+
+      <div class="trust-row">
+        <div><span class="trust-icon">✓</span><span>بدون تسجيل حساب</span></div>
+        <div><span class="trust-icon">✓</span><span>تنزيل PNG</span></div>
+        <div><span class="trust-icon">✓</span><span>لا اشتراك مطلوب</span></div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="how-section">
+      <div class="section-heading">
+        <span class="section-kicker">بخطوات بسيطة</span>
+        <h2>كيف تستخدم الأداة؟</h2>
+      </div>
+      <div class="steps">
+        <article class="step-card">
+          <span class="step-number">١</span>
+          <h3>أدخل الرابط</h3>
+          <p>انسخ رابط موقعك والصقه في خانة الرابط.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">٢</span>
+          <h3>أنشئ الرمز</h3>
+          <p>اضغط على زر الإنشاء لتحويل الرابط إلى QR Code.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">٣</span>
+          <h3>نزّل واستخدم</h3>
+          <p>نزّل الصورة واختبرها قبل استخدامها في الطباعة.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="note-section">
+      <h2>معلومة مهمة</h2>
+      <p>هذا المولّد ينشئ رموز QR ثابتة: يُحفظ الرابط نفسه داخل الرمز. إذا تغيّر الرابط لاحقًا، ستحتاج إلى إنشاء رمز جديد. الأداة لا تتعقب عمليات المسح ولا تنشئ روابط تحويل ديناميكية.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> رمزي — أداة مجانية لإنشاء QR Code</p>
+    <p class="footer-small">لا تضع معلومات سرية داخل رمز QR عام.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
